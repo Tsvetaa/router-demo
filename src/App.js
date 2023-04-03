@@ -3,8 +3,8 @@ import './App.css';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { Navigation } from './components/Navigation';
-import { CharectersList } from './components/CharectersList';
-import { Charecter } from './components/Charecter';
+import { CharactersList } from './components/CharactersList';
+import { Character } from './components/Character';
 
 function App() {
   return (
@@ -15,9 +15,8 @@ function App() {
           <Route path='*' element={<h1>404</h1>} />
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/charecters' element={<CharectersList/>} />
-          <Route path='/charecters/:charectrId' element={<Charecter/>} />
-
+          <Route path='/characters' element={<CharactersList/>} />
+          <Route path='/characters/:characterId/*' element={<Character/>} />
         </Routes>
       </header>
     </div>

@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
-import { CharecterListItem } from "./CharecterListItem";
+import { CharacterListItem } from "./CharacterListItem";
+
 
 const baseUrl = 'https://swapi.dev/api/people';
 
-export const CharectersList = () => {
-    const [charecters, setCharecters] = useState([])
+export const CharactersList = () => {
+    const [characters, setCharacters] = useState([])
 
     useEffect(() => {
         fetch(baseUrl)
             .then(res => res.json())
             .then(data => {
-                setCharecters(data.results);
+                setCharacters(data.results);
             })
     }, []);
 
     return (
         <>
-            <h1>Star Wars Charecters</h1>
+            <h1>Star Wars Characters</h1>
 
             <ul>
-                {charecters.map(x => <CharecterListItem key={x.url} {...x}/>)}
+                {characters.map(x => <CharacterListItem key={x.url} {...x}/>)}
             </ul>
         </>
 
